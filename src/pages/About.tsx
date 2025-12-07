@@ -5,24 +5,29 @@ import { Target, Eye, Heart, Users, Truck, MapPin, Award, Clock } from "lucide-r
 
 const teamMembers = [
   {
-    name: "Alex Johnson",
+    name: "Bhavya Singhal",
     role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
-    name: "Maria Garcia",
+    name: "Krishiv Sharma",
     role: "COO",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
-    name: "James Chen",
+    name: "Navay Gupta",
     role: "CTO",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
-    name: "Sarah Williams",
+    name: "Vikhyat Wadhwa",
     role: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face&q=80",
+  },
+  {
+    name: "Rudra Manhas",
+    role: "Head of Technology",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=80",
   },
 ];
 
@@ -153,7 +158,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {teamMembers.map((member, i) => (
               <div key={i} className="group text-center">
                 <div className="relative mb-6 overflow-hidden rounded-2xl">
