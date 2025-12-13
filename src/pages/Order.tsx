@@ -7,12 +7,12 @@ import { Search, Filter, ShoppingCart, Plus, Minus, Trash2, MapPin, Clock, Credi
 import { useToast } from "@/hooks/use-toast";
 
 const products = [
-  { id: 1, name: "Organic Vegetables Bundle", category: "Groceries", price: 24.99, store: "Fresh Farms", distance: "0.8 km", image: "🥦" },
-  { id: 2, name: "Artisan Bread Selection", category: "Bakery", price: 12.50, store: "City Bakery", distance: "1.2 km", image: "🍞" },
-  { id: 3, name: "Premium Coffee Beans", category: "Beverages", price: 18.99, store: "Bean Bros", distance: "2.1 km", image: "☕" },
-  { id: 4, name: "Fresh Fruit Basket", category: "Groceries", price: 32.00, store: "Orchard Fresh", distance: "1.5 km", image: "🍎" },
-  { id: 5, name: "Dairy Essentials Pack", category: "Dairy", price: 15.75, store: "Farm Direct", distance: "0.5 km", image: "🥛" },
-  { id: 6, name: "Gourmet Cheese Selection", category: "Dairy", price: 28.50, store: "Cheese House", distance: "3.0 km", image: "🧀" },
+  { id: 1, name: "Organic Vegetables Bundle", category: "Groceries", price: 249, store: "Fresh Farms", distance: "0.8 km", image: "🥦" },
+  { id: 2, name: "Artisan Bread Selection", category: "Bakery", price: 125, store: "City Bakery", distance: "1.2 km", image: "🍞" },
+  { id: 3, name: "Premium Coffee Beans", category: "Beverages", price: 189, store: "Bean Bros", distance: "2.1 km", image: "☕" },
+  { id: 4, name: "Fresh Fruit Basket", category: "Groceries", price: 320, store: "Orchard Fresh", distance: "1.5 km", image: "🍎" },
+  { id: 5, name: "Dairy Essentials Pack", category: "Dairy", price: 157, store: "Farm Direct", distance: "0.5 km", image: "🥛" },
+  { id: 6, name: "Gourmet Cheese Selection", category: "Dairy", price: 285, store: "Cheese House", distance: "3.0 km", image: "🧀" },
 ];
 
 const categories = ["All", "Groceries", "Bakery", "Beverages", "Dairy"];
@@ -58,7 +58,7 @@ const Order = () => {
   };
 
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const deliveryFee = cartTotal > 50 ? 0 : 4.99;
+  const deliveryFee = cartTotal > 500 ? 0 : 49;
 
   const handleCheckout = () => {
     if (cart.length === 0) {
@@ -214,7 +214,7 @@ const Order = () => {
                       </div>
 
                       <Button type="submit" variant="hero" size="lg" className="w-full">
-                        Place Order - ${(cartTotal + deliveryFee).toFixed(2)}
+                        Place Order - ₹{(cartTotal + deliveryFee).toFixed(0)}
                         <ArrowRight className="h-5 w-5" />
                       </Button>
                     </form>
@@ -238,21 +238,21 @@ const Order = () => {
                             <div className="text-sm text-muted-foreground">x{item.quantity}</div>
                           </div>
                         </div>
-                        <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="font-medium">₹{(item.price * item.quantity).toFixed(0)}</span>
                       </div>
                     ))}
                     <div className="border-t border-border pt-4 space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Subtotal</span>
-                        <span>${cartTotal.toFixed(2)}</span>
+                        <span>₹{cartTotal.toFixed(0)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Delivery</span>
-                        <span>{deliveryFee === 0 ? "FREE" : `$${deliveryFee.toFixed(2)}`}</span>
+                        <span>{deliveryFee === 0 ? "FREE" : `₹${deliveryFee.toFixed(0)}`}</span>
                       </div>
                       <div className="flex justify-between font-bold text-lg pt-2 border-t border-border">
                         <span>Total</span>
-                        <span className="text-primary">${(cartTotal + deliveryFee).toFixed(2)}</span>
+                        <span className="text-primary">₹{(cartTotal + deliveryFee).toFixed(0)}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -331,7 +331,7 @@ const Order = () => {
                       <div className="text-sm text-muted-foreground mb-1">{product.store} • {product.distance}</div>
                       <h3 className="font-semibold mb-2">{product.name}</h3>
                       <div className="flex items-center justify-between">
-                        <span className="text-xl font-bold text-primary">${product.price.toFixed(2)}</span>
+                        <span className="text-xl font-bold text-primary">₹{product.price}</span>
                         <Button size="sm" onClick={() => addToCart(product)}>
                           <Plus className="h-4 w-4" />
                         </Button>
@@ -362,7 +362,7 @@ const Order = () => {
                             <span className="text-2xl">{item.image}</span>
                             <div className="flex-1">
                               <div className="font-medium text-sm">{item.name}</div>
-                              <div className="text-sm text-muted-foreground">${item.price.toFixed(2)}</div>
+                              <div className="text-sm text-muted-foreground">₹{item.price}</div>
                             </div>
                             <div className="flex items-center gap-2">
                               <button
@@ -384,14 +384,14 @@ const Order = () => {
                         <div className="border-t border-border pt-4">
                           <div className="flex justify-between mb-2">
                             <span className="text-muted-foreground">Subtotal</span>
-                            <span className="font-medium">${cartTotal.toFixed(2)}</span>
+                            <span className="font-medium">₹{cartTotal.toFixed(0)}</span>
                           </div>
                           <div className="flex justify-between mb-4">
                             <span className="text-muted-foreground">Delivery</span>
-                            <span className="font-medium">{deliveryFee === 0 ? "FREE" : `$${deliveryFee.toFixed(2)}`}</span>
+                            <span className="font-medium">{deliveryFee === 0 ? "FREE" : `₹${deliveryFee}`}</span>
                           </div>
                           <Button variant="hero" className="w-full" onClick={handleCheckout}>
-                            Checkout - ${(cartTotal + deliveryFee).toFixed(2)}
+                            Checkout - ₹{(cartTotal + deliveryFee).toFixed(0)}
                           </Button>
                         </div>
                       </>
