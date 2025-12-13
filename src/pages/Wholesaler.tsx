@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Truck, Upload, FileText, DollarSign, ArrowRight, Mail, Lock, User, Calculator } from "lucide-react";
+import { Package, Truck, Upload, FileText, IndianRupee, ArrowRight, Mail, Lock, User, Calculator } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Wholesaler = () => {
@@ -55,7 +55,7 @@ const Wholesaler = () => {
     const estimate = (baseRate + (weight * perKgRate) + (distance * perKmRate)) * quantity;
     
     toast({
-      title: `Estimated Cost: $${estimate.toFixed(2)}`,
+      title: `Estimated Cost: ₹${estimate.toFixed(2)}`,
       description: "This is an approximate quote. Final price may vary.",
     });
   };
@@ -81,7 +81,7 @@ const Wholesaler = () => {
                   {[
                     { icon: Upload, text: "Easy product upload" },
                     { icon: Truck, text: "Scheduled routes" },
-                    { icon: DollarSign, text: "Volume discounts" },
+                    { icon: IndianRupee, text: "Volume discounts" },
                     { icon: FileText, text: "Invoice management" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
@@ -214,7 +214,7 @@ const Wholesaler = () => {
                 {[
                   { title: "Pending Orders", value: "8", icon: Package, color: "text-orange-500" },
                   { title: "Active Deliveries", value: "15", icon: Truck, color: "text-blue-500" },
-                  { title: "This Month", value: "$12,450", icon: DollarSign, color: "text-green-500" },
+                  { title: "This Month", value: "₹12,450", icon: IndianRupee, color: "text-green-500" },
                 ].map((stat, i) => (
                   <Card key={i}>
                     <CardHeader className="flex flex-row items-center justify-between pb-2">

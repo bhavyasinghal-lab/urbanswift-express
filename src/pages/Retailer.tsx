@@ -210,7 +210,7 @@ const Retailer = () => {
                 {[
                   { title: "Active Orders", value: "6", icon: ShoppingCart, color: "text-orange-500" },
                   { title: "Incoming Deliveries", value: "4", icon: Truck, color: "text-blue-500" },
-                  { title: "This Month Spent", value: "$8,240", icon: CreditCard, color: "text-green-500" },
+                  { title: "This Month Spent", value: "₹8,240", icon: CreditCard, color: "text-green-500" },
                 ].map((stat, i) => (
                   <Card key={i}>
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -276,10 +276,10 @@ const Retailer = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {[
-                    { date: "Dec 5", amount: "$1,240", status: "Paid" },
-                    { date: "Dec 3", amount: "$890", status: "Paid" },
-                    { date: "Nov 28", amount: "$2,150", status: "Paid" },
-                    { date: "Nov 25", amount: "$1,560", status: "Paid" },
+                    { date: "Dec 5", amount: "₹1,240", status: "Paid" },
+                    { date: "Dec 3", amount: "₹890", status: "Paid" },
+                    { date: "Nov 28", amount: "₹2,150", status: "Paid" },
+                    { date: "Nov 25", amount: "₹1,560", status: "Paid" },
                   ].map((payment, i) => (
                     <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted">
                       <div>
