@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UrbanSwift Logistics</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      const path = window.location.pathname;
+      const repo = window.location.pathname.split('/')[1];
+      sessionStorage.setItem('redirect', path);
+      window.location.replace('/' + repo + '/');
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
