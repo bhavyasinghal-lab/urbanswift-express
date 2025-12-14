@@ -3,26 +3,31 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Eye, Heart, Users, Truck, MapPin, Award, Clock } from "lucide-react";
 
+import krishivImg from "@/assets/team/krishiv.jpg";
+import navayImg from "@/assets/team/navay.jpg";
+import vikhyatImg from "@/assets/team/vikhyat.jpg";
+import bhavyaImg from "@/assets/team/bhavya.jpg";
+
 const teamMembers = [
   {
     name: "Bhavya Singhal",
     role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&q=80",
+    image: bhavyaImg,
   },
   {
     name: "Krishiv Sharma",
     role: "COO",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face&q=80",
+    image: krishivImg,
   },
   {
     name: "Navay Gupta",
     role: "CTO",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face&q=80",
+    image: navayImg,
   },
   {
     name: "Vikhyat Wadhwa",
     role: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face&q=80",
+    image: vikhyatImg,
   },
   {
     name: "Rudra Manhas",
