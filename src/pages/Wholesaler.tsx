@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Package, Truck, Upload, FileText, IndianRupee, ArrowRight, Mail, Lock, User, Calculator, Edit } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const Wholesaler = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isRegistering, setIsRegistering] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,18 +33,8 @@ const Wholesaler = () => {
     setIsLoggedIn(true);
   };
 
-  const handleUpload = () => {
-    toast({
-      title: "Product list uploaded!",
-      description: "Your catalog has been updated successfully.",
-    });
-  };
-
-  const handleEditList = () => {
-    toast({
-      title: "Edit Mode Enabled",
-      description: "You can now edit your product list.",
-    });
+  const handleManageProducts = () => {
+    navigate("/product-list?source=wholesaler");
   };
 
   const handleRequestDelivery = () => {
@@ -202,11 +194,11 @@ const Wholesaler = () => {
               <p className="text-muted-foreground">Manage your bulk deliveries</p>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <Button variant="outline" onClick={handleUpload}>
+              <Button variant="outline" onClick={handleManageProducts}>
                 <Upload className="h-5 w-5 mr-2" />
                 Upload Products
               </Button>
-              <Button variant="outline" onClick={handleEditList}>
+              <Button variant="outline" onClick={handleManageProducts}>
                 <Edit className="h-5 w-5 mr-2" />
                 Edit List
               </Button>

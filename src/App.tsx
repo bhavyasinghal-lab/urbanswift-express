@@ -10,6 +10,7 @@ import Producer from "./pages/Producer";
 import Wholesaler from "./pages/Wholesaler";
 import Retailer from "./pages/Retailer";
 import Order from "./pages/Order";
+import ProductList from "./pages/ProductList";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/wholesaler" element={<Wholesaler />} />
           <Route path="/retailer" element={<Retailer />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/product-list" element={<ProductList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
