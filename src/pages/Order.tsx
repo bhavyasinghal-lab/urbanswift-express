@@ -7,30 +7,30 @@ import { Search, Filter, ShoppingCart, Plus, Minus, Trash2, MapPin, Clock, Credi
 import { useToast } from "@/hooks/use-toast";
 
 const products = [
-  { id: 1, name: "Organic Vegetables Bundle", category: "Groceries", price: 49, store: "Fresh Farms", distance: "0.8 km", image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop", unit: "1 kg" },
-  { id: 2, name: "Artisan Bread Selection", category: "Bakery", price: 25, store: "City Bakery", distance: "1.2 km", image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&h=200&fit=crop", unit: "1 loaf" },
-  { id: 3, name: "Premium Coffee Beans", category: "Beverages", price: 39, store: "Bean Bros", distance: "2.1 km", image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=200&h=200&fit=crop", unit: "250 gm" },
-  { id: 4, name: "Fresh Fruit Basket", category: "Groceries", price: 65, store: "Orchard Fresh", distance: "1.5 km", image: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop", unit: "1 kg" },
-  { id: 5, name: "Dairy Essentials Pack", category: "Dairy", price: 35, store: "Farm Direct", distance: "0.5 km", image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop", unit: "1 litre" },
-  { id: 6, name: "Gourmet Cheese Selection", category: "Dairy", price: 55, store: "Cheese House", distance: "3.0 km", image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=200&h=200&fit=crop", unit: "200 gm" },
-  { id: 7, name: "Basmati Rice Premium", category: "Groceries", price: 38, store: "Grain Market", distance: "1.8 km", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop", unit: "1 kg" },
-  { id: 8, name: "Fresh Orange Juice", category: "Beverages", price: 18, store: "Juice Bar", distance: "0.6 km", image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=200&h=200&fit=crop", unit: "500 ml" },
-  { id: 9, name: "Whole Wheat Flour", category: "Groceries", price: 15, store: "Mill Fresh", distance: "2.5 km", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop", unit: "1 kg" },
-  { id: 10, name: "Chocolate Croissants", category: "Bakery", price: 20, store: "French Bakery", distance: "1.0 km", image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=200&h=200&fit=crop", unit: "2 pcs" },
-  { id: 11, name: "Greek Yogurt Pack", category: "Dairy", price: 28, store: "Dairy Delight", distance: "0.9 km", image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&h=200&fit=crop", unit: "400 gm" },
-  { id: 12, name: "Masala Tea Blend", category: "Beverages", price: 30, store: "Tea House", distance: "1.3 km", image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=200&h=200&fit=crop", unit: "100 gm" },
-  { id: 13, name: "Fresh Paneer Block", category: "Dairy", price: 45, store: "Dairy Fresh", distance: "1.1 km", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&h=200&fit=crop", unit: "250 gm" },
-  { id: 14, name: "Sourdough Loaf", category: "Bakery", price: 32, store: "Artisan Bakes", distance: "2.0 km", image: "https://images.unsplash.com/photo-1585478259715-876acc5be8fc?w=200&h=200&fit=crop", unit: "1 loaf" },
-  { id: 15, name: "Mixed Nuts Pack", category: "Groceries", price: 70, store: "Nutty Corner", distance: "0.7 km", image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=200&h=200&fit=crop", unit: "250 gm" },
-  { id: 16, name: "Mango Lassi Bottle", category: "Beverages", price: 15, store: "Lassi King", distance: "0.4 km", image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=200&h=200&fit=crop", unit: "300 ml" },
-  { id: 17, name: "Butter Croissants", category: "Bakery", price: 18, store: "City Bakery", distance: "1.2 km", image: "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?w=200&h=200&fit=crop", unit: "2 pcs" },
-  { id: 18, name: "Organic Honey Jar", category: "Groceries", price: 55, store: "Bee Farms", distance: "3.2 km", image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=200&h=200&fit=crop", unit: "500 gm" },
-  { id: 19, name: "Cottage Cheese Pack", category: "Dairy", price: 28, store: "Farm Direct", distance: "0.5 km", image: "https://images.unsplash.com/photo-1559561853-08451507cbe7?w=200&h=200&fit=crop", unit: "200 gm" },
-  { id: 20, name: "Cold Brew Coffee", category: "Beverages", price: 25, store: "Bean Bros", distance: "2.1 km", image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&h=200&fit=crop", unit: "350 ml" },
-  { id: 21, name: "Fresh Spinach Bundle", category: "Groceries", price: 12, store: "Green Mart", distance: "0.3 km", image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=200&fit=crop", unit: "500 gm" },
-  { id: 22, name: "Multigrain Bread", category: "Bakery", price: 22, store: "Health Bakes", distance: "1.6 km", image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=200&h=200&fit=crop", unit: "1 loaf" },
-  { id: 23, name: "Almond Milk Carton", category: "Dairy", price: 38, store: "Plant Dairy", distance: "2.3 km", image: "https://images.unsplash.com/photo-1600788907416-456578634209?w=200&h=200&fit=crop", unit: "1 litre" },
-  { id: 24, name: "Green Smoothie Mix", category: "Beverages", price: 22, store: "Juice Bar", distance: "0.6 km", image: "https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=200&h=200&fit=crop", unit: "500 ml" },
+  { id: 1, name: "Organic Vegetables Bundle", category: "Groceries", price: 49, store: "Fresh Farms", image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=200&h=200&fit=crop", unit: "1 kg" },
+  { id: 2, name: "Artisan Bread Selection", category: "Bakery", price: 25, store: "City Bakery", image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&h=200&fit=crop", unit: "1 loaf" },
+  { id: 3, name: "Premium Coffee Beans", category: "Beverages", price: 39, store: "Bean Bros",  image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=200&h=200&fit=crop", unit: "250 gm" },
+  { id: 4, name: "Fresh Fruit Basket", category: "Groceries", price: 65, store: "Orchard Fresh",  image: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop", unit: "1 kg" },
+  { id: 5, name: "Dairy Essentials Pack", category: "Dairy", price: 35, store: "Farm Direct",  image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop", unit: "1 litre" },
+  { id: 6, name: "Gourmet Cheese Selection", category: "Dairy", price: 55, store: "Cheese House",  image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=200&h=200&fit=crop", unit: "200 gm" },
+  { id: 7, name: "Basmati Rice Premium", category: "Groceries", price: 38, store: "Grain Market",  image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop", unit: "1 kg" },
+  { id: 8, name: "Fresh Orange Juice", category: "Beverages", price: 18, store: "Juice Bar",  image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=200&h=200&fit=crop", unit: "500 ml" },
+  { id: 9, name: "Whole Wheat Flour", category: "Groceries", price: 15, store: "Mill Fresh",  image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=200&fit=crop", unit: "1 kg" },
+  { id: 10, name: "Chocolate Croissants", category: "Bakery", price: 20, store: "French Bakery", image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=200&h=200&fit=crop", unit: "2 pcs" },
+  { id: 11, name: "Greek Yogurt Pack", category: "Dairy", price: 28, store: "Dairy Delight", image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&h=200&fit=crop", unit: "400 gm" },
+  { id: 12, name: "Masala Tea Blend", category: "Beverages", price: 30, store: "Tea House",  image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=200&h=200&fit=crop", unit: "100 gm" },
+  { id: 13, name: "Fresh Paneer Block", category: "Dairy", price: 45, store: "Dairy Fresh", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&h=200&fit=crop", unit: "250 gm" },
+  { id: 14, name: "Sourdough Loaf", category: "Bakery", price: 32, store: "Artisan Bakes",  image: "https://images.unsplash.com/photo-1585478259715-876acc5be8fc?w=200&h=200&fit=crop", unit: "1 loaf" },
+  { id: 15, name: "Mixed Nuts Pack", category: "Groceries", price: 70, store: "Nutty Corner",  image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=200&h=200&fit=crop", unit: "250 gm" },
+  { id: 16, name: "Mango Lassi Bottle", category: "Beverages", price: 15, store: "Lassi King", image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=200&h=200&fit=crop", unit: "300 ml" },
+  { id: 17, name: "Butter Croissants", category: "Bakery", price: 18, store: "City Bakery",  image: "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?w=200&h=200&fit=crop", unit: "2 pcs" },
+  { id: 18, name: "Organic Honey Jar", category: "Groceries", price: 55, store: "Bee Farms",  image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=200&h=200&fit=crop", unit: "500 gm" },
+  { id: 19, name: "Cottage Cheese Pack", category: "Dairy", price: 28, store: "Farm Direct",  image: "https://images.unsplash.com/photo-1559561853-08451507cbe7?w=200&h=200&fit=crop", unit: "200 gm" },
+  { id: 20, name: "Cold Brew Coffee", category: "Beverages", price: 25, store: "Bean Bros",  image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=200&h=200&fit=crop", unit: "350 ml" },
+  { id: 21, name: "Fresh Spinach Bundle", category: "Groceries", price: 12, store: "Green Mart", image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=200&fit=crop", unit: "500 gm" },
+  { id: 22, name: "Multigrain Bread", category: "Bakery", price: 22, store: "Health Bakes",  image: "https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=200&h=200&fit=crop", unit: "1 loaf" },
+  { id: 23, name: "Almond Milk Carton", category: "Dairy", price: 38, store: "Plant Dairy", image: "https://images.unsplash.com/photo-1600788907416-456578634209?w=200&h=200&fit=crop", unit: "1 litre" },
+  { id: 24, name: "Green Smoothie Mix", category: "Beverages", price: 22, store: "Juice Bar",  image: "https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=200&h=200&fit=crop", unit: "500 ml" },
 ];
 
 const categories = ["All", "Groceries", "Bakery", "Beverages", "Dairy"];
@@ -352,7 +352,7 @@ const Order = () => {
                         className="w-full h-40 object-cover"
                       />
                       <div className="p-4">
-                        <div className="text-sm text-muted-foreground mb-1">{product.store} • {product.distance}</div>
+                        <div className="text-sm text-muted-foreground mb-1">{product.store}</div>
                         <h3 className="font-semibold mb-1">{product.name}</h3>
                         <div className="text-xs text-muted-foreground mb-2">{product.unit}</div>
                         <div className="flex items-center justify-between">
