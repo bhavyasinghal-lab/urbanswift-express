@@ -7,6 +7,7 @@ import krishivImg from "@/assets/team/krishiv.jpg";
 import navayImg from "@/assets/team/navay.jpg";
 import vikhyatImg from "@/assets/team/vikhyat.jpg";
 import bhavyaImg from "@/assets/team/bhavya.jpg";
+import rudraImg from "@/assets/team/rudra.png";
 
 const teamMembers = [
   {
@@ -32,7 +33,7 @@ const teamMembers = [
   {
     name: "Rudra Manhas",
     role: "Head of Technology",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=80",
+    image: rudraImg,
   },
 ];
 

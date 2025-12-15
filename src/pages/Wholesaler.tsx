@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Truck, Upload, FileText, IndianRupee, ArrowRight, Mail, Lock, User, Calculator } from "lucide-react";
+import { Package, Truck, Upload, FileText, IndianRupee, ArrowRight, Mail, Lock, User, Calculator, Edit } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Wholesaler = () => {
@@ -35,6 +35,13 @@ const Wholesaler = () => {
     toast({
       title: "Product list uploaded!",
       description: "Your catalog has been updated successfully.",
+    });
+  };
+
+  const handleEditList = () => {
+    toast({
+      title: "Edit Mode Enabled",
+      description: "You can now edit your product list.",
     });
   };
 
@@ -194,10 +201,14 @@ const Wholesaler = () => {
               <h1 className="text-3xl font-bold">Wholesaler Dashboard</h1>
               <p className="text-muted-foreground">Manage your bulk deliveries</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               <Button variant="outline" onClick={handleUpload}>
                 <Upload className="h-5 w-5 mr-2" />
                 Upload Products
+              </Button>
+              <Button variant="outline" onClick={handleEditList}>
+                <Edit className="h-5 w-5 mr-2" />
+                Edit List
               </Button>
               <Button variant="hero" onClick={handleRequestDelivery}>
                 <Truck className="h-5 w-5 mr-2" />

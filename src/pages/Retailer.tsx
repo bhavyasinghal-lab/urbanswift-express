@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Truck, CreditCard, RefreshCcw, ShoppingCart, ArrowRight, Mail, Lock, User, Factory, Store } from "lucide-react";
+import { Package, Truck, CreditCard, RefreshCcw, ShoppingCart, ArrowRight, Mail, Lock, User, Factory, Store, Upload, Edit } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Retailer = () => {
@@ -31,6 +31,20 @@ const Retailer = () => {
     toast({
       title: "Reorder placed!",
       description: "Your last order has been duplicated and submitted.",
+    });
+  };
+
+  const handleUploadList = () => {
+    toast({
+      title: "Product list uploaded!",
+      description: "Your inventory has been updated for consumers.",
+    });
+  };
+
+  const handleEditList = () => {
+    toast({
+      title: "Edit Mode Enabled",
+      description: "You can now edit your product list.",
     });
   };
 
@@ -168,10 +182,20 @@ const Retailer = () => {
               <h1 className="text-3xl font-bold">Retailer Dashboard</h1>
               <p className="text-muted-foreground">Order products and track deliveries</p>
             </div>
-            <Button variant="hero" onClick={handleQuickReorder}>
-              <RefreshCcw className="h-5 w-5 mr-2" />
-              Quick Reorder
-            </Button>
+            <div className="flex gap-3 flex-wrap">
+              <Button variant="outline" onClick={handleUploadList}>
+                <Upload className="h-5 w-5 mr-2" />
+                Upload Products
+              </Button>
+              <Button variant="outline" onClick={handleEditList}>
+                <Edit className="h-5 w-5 mr-2" />
+                Edit List
+              </Button>
+              <Button variant="hero" onClick={handleQuickReorder}>
+                <RefreshCcw className="h-5 w-5 mr-2" />
+                Quick Reorder
+              </Button>
+            </div>
           </div>
 
           {/* Order Source Selection */}
